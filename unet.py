@@ -67,7 +67,7 @@ class Unet(nn.Module):
         out = nn.Sigmoid()(c10)
         return out
 
-# copy网上的unet网络。
+# unet网络2。（使用resnet18）
 # class Decoder(nn.Module):
 #   def __init__(self, in_channels, middle_channels, out_channels):
 #     super(Decoder, self).__init__()
