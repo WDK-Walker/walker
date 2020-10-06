@@ -1,7 +1,7 @@
 import torch
 from torch import nn
 import torchvision
-# unet原始网络,训练权重是original_weights_20.pth
+# unet原始网络
 class DoubleConv(nn.Module):
     def __init__(self, in_ch, out_ch):
         super(DoubleConv, self).__init__()
@@ -67,7 +67,7 @@ class Unet(nn.Module):
         out = nn.Sigmoid()(c10)
         return out
 
-# copy网上的unet网络。训练权重是weights_20.pth
+# copy网上的unet网络。
 # class Decoder(nn.Module):
 #   def __init__(self, in_channels, middle_channels, out_channels):
 #     super(Decoder, self).__init__()
