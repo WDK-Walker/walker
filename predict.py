@@ -13,7 +13,7 @@ x_transforms = transforms.Compose([
     transforms.Normalize([0.5,0.5,0.5], [0.5,0.5,0.5])
 ])
 
-# 加载图片
+# 加载图片 
 img = Image.open("./data/text/01.jpg")
 # plt.imshow(img)
 # plt.show()
