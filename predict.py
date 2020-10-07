@@ -19,7 +19,7 @@ img = Image.open("./data/text/01.jpg")
 # plt.show()
 # [N, C, H, W]
 img = x_transforms(img)
-
+ 
 
 # expand batch dimension
 img = torch.unsqueeze(img, dim=0)
