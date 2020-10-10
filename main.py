@@ -12,18 +12,31 @@ import numpy as np
 # 是否使用cuda
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
+#改动前
+# x_transforms = transforms.Compose([
+#     transforms.Resize((224, 224)),
+#     transforms.ToTensor(),
+#     transforms.Normalize([0.5, 0.5, 0.5], [0.5, 0.5, 0.5])
+# ])
+#改动后
 x_transforms = transforms.Compose([
-    transforms.Resize((224, 224)),
+    transforms.Resize((598, 448)),
     transforms.ToTensor(),
     transforms.Normalize([0.5, 0.5, 0.5], [0.5, 0.5, 0.5])
 ])
 
 # mask只需要转换为tensor
+#改动前
+# y_transforms = transforms.Compose([
+#     transforms.Resize((224, 224)),
+#     transforms.ToTensor()
+# ])
+# 改动后
 y_transforms = transforms.Compose([
-    transforms.Resize((224, 224)),
+    transforms.Resize((598,448)),
+    transforms.CenterCrop(448),
     transforms.ToTensor()
 ])
-
 def train_model(model, optimizer, dataload, num_epochs=20):
     n = []
     for epoch in range(1, num_epochs+1):
